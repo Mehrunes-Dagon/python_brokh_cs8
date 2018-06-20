@@ -9,7 +9,7 @@ from graph import *
 
 graph_data = Graph()
 graph_data.create_test_data()
-print(graph_data.vertexes)
+# print(graph_data.vertexes)
 
 N = len(graph_data.vertexes)
 node_indices = list(range(N))
@@ -34,11 +34,11 @@ graph.node_renderer.glyph = Oval(height=10, width=10, fill_color='color')
 # this is drawing edges from start to end
 graph.edge_renderer.data_source.data = dict(
     # TODO what is happening here???
-    # why all edges start from first vertex: is a list of some kind that has to do with strating points
-    start=[0]*N,
-    end=node_indices)  # is a list of some kind that has to do with ending points
-# print(start)
-# print(end)
+    # why all edges start from first vertex: is a list of some kind that has to do with starting points
+    start=node_indices,
+    end=list(map(lambda x: x + 1, node_indices)))  # is a list of some kind that has to do with ending points
+print("this: %s" % (graph.edge_renderer.data_source.data))
+print("node_indices: %s" % (node_indices))
 
 # start of layout code
 # circ = [i*2*math.pi/N for i in node_indices]
