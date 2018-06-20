@@ -4,6 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+"jinja2" = "*"
+python-dateutil = "*"
+pyyaml = "*"
+numpy = "*"
+packaging = "*"
+six = "*"
+tornado = "*"
 
 [dev-packages]
 
